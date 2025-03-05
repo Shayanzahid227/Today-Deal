@@ -7,27 +7,10 @@ class SignInScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<SignInScreen> {
-  final _auth = FirebaseAuth.instance;
-
-  Future<void> register() async {
-    try {
-      await _auth.createUserWithEmailAndPassword(
-          email: emailController.text, password: passwordController.text);
-    } catch (e) {
-      print("SignIn failed: $e");
-    }
-  }
-
-  TextEditingController emailController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
-  final _fromKey = GlobalKey<FormState>();
-
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Scaffold(
-        body: Column(),
-      ),
+    return Scaffold(
+      body: SingleChildScrollView(child: Column()),
     );
   }
 }
