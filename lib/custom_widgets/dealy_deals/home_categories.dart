@@ -16,7 +16,7 @@ class CustomHomeCategoriesWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 130.h,
+      height: 120.h,
       width: 120.w,
       decoration: BoxDecoration(
         //  border: Border.all(color: blackColor),

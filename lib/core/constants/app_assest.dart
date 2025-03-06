@@ -18,6 +18,13 @@ class AppAssets {
   String restaurant = "$dynamicAssets/restaurant.png";
   String pizzaHouse = "$dynamicAssets/pizzaHouse.png";
   String jewelry = "$dynamicAssets/jewelry.png";
+
+  ///
+  ///   top rated
+  ///
+  String add = "$iconsAssets/add.png";
+  String hairStyle = "$dynamicAssets/hairStyle.png";
+  String jewellery = "$dynamicAssets/jewelley.png";
 //******************************************************* */
   String search = "$iconsAssets/search.png";
 }
