@@ -20,3 +20,4 @@ const Color whiteColor = Color(0xffFFFFFF);
 const Color greyColor = Color(0xffE0E0E0);
 const Color greyColor2 = Color(0xffbdbdbd);
 const Color lightGreenColor = Color(0xff4CAD73);
+const Color lightBlack = Color.fromRGBO(0, 0, 0, 48);

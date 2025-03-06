@@ -25,6 +25,13 @@ class AppAssets {
   String add = "$iconsAssets/add.png";
   String hairStyle = "$dynamicAssets/hairStyle.png";
   String jewellery = "$dynamicAssets/jewelley.png";
-//******************************************************* */
-  String search = "$iconsAssets/search.png";
+  String famous1 = "$dynamicAssets/famous1.png";
+  String famous2 = "$dynamicAssets/famous2.png";
+//*********************     category page    ********************************** */
+
+  String beauty2 = "$dynamicAssets/beauty2.png";
+  String jewellery2 = "$dynamicAssets/jewellery2.png";
+  String pizzaHouse2 = "$dynamicAssets/pizzaHouse2.png";
+//*************************    restaurant details      ******************************** */
+  String location2 = "$iconsAssets/location2.png";
 }

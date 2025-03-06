@@ -1,8 +1,12 @@
 import 'package:code_structure/ui/auth/login/login_screen.dart';
+import 'package:code_structure/ui/screens/all_offers/category_page.dart';
+import 'package:code_structure/ui/screens/famouse_store/famous_store_page.dart';
 import 'package:code_structure/ui/screens/home/home_screen.dart';
 import 'package:code_structure/ui/screens/home/home_screen_2.dart';
+import 'package:code_structure/ui/screens/restaurant_details/retaurant_detail.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/route_manager.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,10 +22,10 @@ class MyApp extends StatelessWidget {
       designSize: const Size(394, 852),
       minTextAdapt: true,
       splitScreenMode: true,
-      child: MaterialApp(
+      child: GetMaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(scaffoldBackgroundColor: const Color(0xffFAF8F6)),
-        home: HomeScreen(),
+        home: RestaurantDetailsPage(),
       ),
     );
   }

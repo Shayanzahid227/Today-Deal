@@ -10,38 +10,44 @@ class HomeScreenViewModel extends BaseViewModel {
   ///
   List<HomeDiscountModel> HomeDiscountList = [
     HomeDiscountModel(
-      discount: 'Discount',
-      discountPercentage: '25%',
+      imageUrl: AppAssets().pizza,
+      subTitle: 'Discount',
+      discountValue: '25%',
       dishType: "Non_Veg Platter",
       seeDetails: "see details",
     ),
     HomeDiscountModel(
-      discount: 'Discount',
-      discountPercentage: '25%',
+      imageUrl: AppAssets().pizza,
+      subTitle: 'Discount',
+      discountValue: '25%',
       dishType: "Non_Veg Platter",
       seeDetails: "see details",
     ),
     HomeDiscountModel(
-      discount: 'Discount',
-      discountPercentage: '25%',
+      imageUrl: AppAssets().pizza,
+      subTitle: 'Discount',
+      discountValue: '25%',
       dishType: "Non_Veg Platter",
       seeDetails: "see details",
     ),
     HomeDiscountModel(
-      discount: 'Discount',
-      discountPercentage: '25%',
+      imageUrl: AppAssets().pizza,
+      subTitle: 'Discount',
+      discountValue: '25%',
       dishType: "Non_Veg Platter",
       seeDetails: "see details",
     ),
     HomeDiscountModel(
-      discount: 'Discount',
-      discountPercentage: '25%',
+      imageUrl: AppAssets().pizza,
+      subTitle: 'Discount',
+      discountValue: '25%',
       dishType: "Non_Veg Platter",
       seeDetails: "see details",
     ),
     HomeDiscountModel(
-      discount: 'Discount',
-      discountPercentage: '25%',
+      imageUrl: AppAssets().pizza,
+      subTitle: 'Discount',
+      discountValue: '25%',
       dishType: "Non_Veg Platter",
       seeDetails: "see details",
     )
@@ -99,7 +105,7 @@ class HomeScreenViewModel extends BaseViewModel {
   ///
   List<HomeTopRatedModel> nearByStoreList = [
     HomeTopRatedModel(
-        imageUrl: AppAssets().jewelry,
+        imageUrl: AppAssets().jewellery2,
         title: 'Karolbagh Jewellers',
         offer: 'full purity with whole mark',
         location: 'Near Jain Book shop (mahavir road) Ahmedgarh War',
@@ -111,7 +117,7 @@ class HomeScreenViewModel extends BaseViewModel {
         location: 'Near Jain Book shop (mahavir road) Ahmedgarh War',
         direction: '- Direction'),
     HomeTopRatedModel(
-        imageUrl: AppAssets().jewelry,
+        imageUrl: AppAssets().jewellery2,
         title: 'Karolbagh Jewellers',
         offer: 'full purity with whole mark',
         location: 'Near Jain Book shop (mahavir road) Ahmedgarh War',
@@ -128,30 +134,27 @@ class HomeScreenViewModel extends BaseViewModel {
   ///     famous store
   ///
 
-  ///
-  ///   near by store section
-  ///
   List<HomeTopRatedModel> famousStoreList = [
     HomeTopRatedModel(
-        imageUrl: AppAssets().restaurant,
+        imageUrl: AppAssets().famous1,
         title: 'Ricks Kitchen & Meat Shope',
         offer: '5% off',
         location: 'Near Jain Book shop (mahavir road) Ahmedgarh War',
         direction: '- Direction'),
     HomeTopRatedModel(
-        imageUrl: AppAssets().restaurant,
+        imageUrl: AppAssets().famous2,
         title: 'Ricks Kitchen & Meat Shope',
         offer: '5% off',
         location: 'Near Jain Book shop (mahavir road) Ahmedgarh War',
         direction: '- Direction'),
     HomeTopRatedModel(
-        imageUrl: AppAssets().restaurant,
+        imageUrl: AppAssets().famous1,
         title: 'Ricks Kitchen & Meat Shope',
         offer: '5% off',
         location: 'Near Jain Book shop (mahavir road) Ahmedgarh War',
         direction: '- Direction'),
     HomeTopRatedModel(
-        imageUrl: AppAssets().restaurant,
+        imageUrl: AppAssets().famous2,
         title: 'Ricks Kitchen & Meat Shope',
         offer: '5% off',
         location: 'Near Jain Book shop (mahavir road) Ahmedgarh War',

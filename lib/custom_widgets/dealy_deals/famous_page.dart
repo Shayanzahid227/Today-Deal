@@ -5,9 +5,9 @@ import 'package:code_structure/core/model/home_top_rated.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CustomHomeTopRatedWidget extends StatelessWidget {
+class CustomFamousPageWidget extends StatelessWidget {
   final HomeTopRatedModel HomeTopRated;
-  const CustomHomeTopRatedWidget({
+  const CustomFamousPageWidget({
     required this.HomeTopRated,
     super.key,
   });
@@ -38,32 +38,12 @@ class CustomHomeTopRatedWidget extends StatelessWidget {
             child: Container(
               height: 133,
               width: double.infinity,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage(
-                      '${HomeTopRated.imageUrl}',
-                    ),
-                    fit: BoxFit.cover),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Align(
-                  alignment: Alignment.topRight,
-                  child: Container(
-                    height: 30.h,
-                    width: 30.w,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(2),
-                        color: lightBlack),
-                  ),
+              child: Image(
+                image: AssetImage(
+                  '${HomeTopRated.imageUrl}',
                 ),
+                fit: BoxFit.cover,
               ),
-              // child: Image(
-              //   image: AssetImage(
-              //     '${HomeTopRated.imageUrl}',
-              //   ),
-              //   fit: BoxFit.cover,
-              // ),
             ),
           ),
           10.h.verticalSpace,

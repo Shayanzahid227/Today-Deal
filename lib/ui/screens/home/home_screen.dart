@@ -9,10 +9,12 @@ import 'package:code_structure/custom_widgets/dealy_deals/home_famous_store.dart
 import 'package:code_structure/custom_widgets/dealy_deals/home_near_by_store.dart';
 import 'package:code_structure/custom_widgets/dealy_deals/home_screen_tabs.dart';
 import 'package:code_structure/custom_widgets/dealy_deals/home_top_rated.dart';
+import 'package:code_structure/ui/screens/all_offers/category_page.dart';
 import 'package:code_structure/ui/screens/home/home_screen_view_model.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/route_manager.dart';
 
 import 'package:provider/provider.dart';
 
@@ -163,8 +165,13 @@ class _HomeScreenState extends State<HomeScreen> {
             padding: EdgeInsets.only(
               left: index == 0 ? 0 : 8.0,
             ),
-            child: CustomHomeDiscountWidget(
-              homeDiscount: model.HomeDiscountList[index],
+            child: GestureDetector(
+              onTap: () {
+                Get.to(CategoryPage());
+              },
+              child: CustomHomeDiscountWidget(
+                homeDiscount: model.HomeDiscountList[index],
+              ),
             ),
           );
         },

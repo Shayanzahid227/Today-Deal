@@ -1,24 +1,24 @@
-import 'package:code_structure/core/constants/app_assest.dart';
 import 'package:code_structure/core/constants/colors.dart';
 import 'package:code_structure/core/constants/text_style.dart';
 import 'package:code_structure/core/model/home_discount.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CustomHomeDiscountWidget extends StatelessWidget {
+class CustomCategoriesPageWidget extends StatelessWidget {
   final HomeDiscountModel homeDiscount;
-  final VoidCallback? ontap;
-  CustomHomeDiscountWidget({
+  //final VoidCallback? ontap;
+  CustomCategoriesPageWidget({
     required this.homeDiscount,
-    this.ontap,
+    //this.ontap,
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 178.h,
-      width: 310.w,
+      height: 200.h,
+      //width: 310.w,
+      width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(14),
         gradient: LinearGradient(
@@ -36,6 +36,24 @@ class CustomHomeDiscountWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: [
+                Text(
+                  '${homeDiscount.title}',
+                  style: style25.copyWith(
+                    color: whiteColor,
+                    fontSize: 18,
+                    // shadows: <Shadow>[
+                    //   Shadow(
+                    //     offset: Offset(
+                    //         4.0, 1.0), // Adjust offset for shadow position
+                    //     blurRadius:
+                    //         3.0, // Adjust blur radius for shadow softness
+                    //     color: Colors.black, // Shadow color
+                    //   ),
+                    // ],
+                  ),
+                ),
+                /////////////////////////////////
+
                 Text(
                   '${homeDiscount.subTitle}',
                   style: style25.copyWith(
@@ -67,13 +85,13 @@ class CustomHomeDiscountWidget extends StatelessWidget {
                     ],
                   ),
                 ),
-                Text(
-                  '${homeDiscount.dishType}',
-                  style: style14.copyWith(fontSize: 11),
-                ),
-                10.verticalSpace,
+                // Text(
+                //   '${homeDiscount.dishType}',
+                //   style: style14.copyWith(fontSize: 11),
+                // ),
+                // 10.verticalSpace,
                 GestureDetector(
-                  onTap: ontap,
+                  onTap: homeDiscount.onTap,
                   child: Container(
                     height: 18.h,
                     width: 70.w,
@@ -94,7 +112,7 @@ class CustomHomeDiscountWidget extends StatelessWidget {
           Column(
             children: [
               Container(
-                height: 179.h,
+                height: 200.h,
                 // width: 160,
                 decoration: BoxDecoration(
                     // borderRadius: BorderRadius.circular(14.r)
