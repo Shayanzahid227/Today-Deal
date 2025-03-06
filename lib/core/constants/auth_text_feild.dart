@@ -11,18 +11,18 @@ final authFieldDecoration = InputDecoration(
   filled: true,
   border: InputBorder.none,
   enabledBorder: OutlineInputBorder(
-      borderSide: const BorderSide(color: textfiledBorderColor, width: 2.0),
+      borderSide: const BorderSide(color: whiteColor, width: 2.0),
       borderRadius: BorderRadius.circular(16)),
   focusedBorder: OutlineInputBorder(
-      borderSide: const BorderSide(color: textfiledBorderColor, width: 2.0),
+      borderSide: const BorderSide(color: whiteColor, width: 2.0),
       borderRadius: BorderRadius.circular(16)),
   errorBorder: OutlineInputBorder(
-      borderSide: const BorderSide(color: textfiledBorderColor, width: 2.0),
+      borderSide: const BorderSide(color: whiteColor, width: 2.0),
       borderRadius: BorderRadius.circular(16)),
   disabledBorder: OutlineInputBorder(
-      borderSide: const BorderSide(color: textfiledBorderColor, width: 2.0),
+      borderSide: const BorderSide(color: whiteColor, width: 2.0),
       borderRadius: BorderRadius.circular(16)),
   focusedErrorBorder: OutlineInputBorder(
-      borderSide: const BorderSide(color: textfiledBorderColor, width: 2.0),
+      borderSide: const BorderSide(color: whiteColor, width: 2.0),
       borderRadius: BorderRadius.circular(16)),
 );

@@ -31,7 +31,7 @@ class CustomHomeDiscountWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Padding(
-            padding: const EdgeInsets.only(top: 20, bottom: 20, left: 20),
+            padding: const EdgeInsets.only(top: 20, bottom: 20, left: 020),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,

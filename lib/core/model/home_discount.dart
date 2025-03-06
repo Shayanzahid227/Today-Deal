@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 class HomeDiscountModel {
   final String? discount;
   final String? discountPercentage;
