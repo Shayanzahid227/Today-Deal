@@ -17,8 +17,8 @@ class CustomHomeDiscountWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 178.h,
       width: 310.w,
+      margin: EdgeInsets.all(5),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(14),
         gradient: LinearGradient(
@@ -41,35 +41,34 @@ class CustomHomeDiscountWidget extends StatelessWidget {
                   style: style25.copyWith(
                     color: whiteColor,
                     fontSize: 18,
-                    shadows: <Shadow>[
-                      Shadow(
-                        offset: Offset(
-                            4.0, 1.0), // Adjust offset for shadow position
-                        blurRadius:
-                            3.0, // Adjust blur radius for shadow softness
-                        color: Colors.black, // Shadow color
-                      ),
-                    ],
+                    // shadows: <Shadow>[
+                    //   Shadow(
+                    //     offset: Offset(
+                    //         4.0, 1.0), // Adjust offset for shadow position
+                    //     blurRadius:
+                    //         3.0, // Adjust blur radius for shadow softness
+                    //     color: Colors.black, // Shadow color
+                    //   ),
+                    // ],
                   ),
                 ),
                 Text(
                   '${homeDiscount.discountValue}',
-                  style: style25B.copyWith(
-                    fontSize: 42.sp,
-                    shadows: <Shadow>[
-                      Shadow(
-                        offset: Offset(
-                            4.0, 2.0), // Adjust offset for shadow position
-                        blurRadius:
-                            3.0, // Adjust blur radius for shadow softness
-                        color: Colors.black, // Shadow color
+                  style: style25B.copyWith(fontSize: 42.sp, color: whiteColor
+                      // shadows: <Shadow>[
+                      //   Shadow(
+                      //     offset: Offset(
+                      //         4.0, 2.0), // Adjust offset for shadow position
+                      //     blurRadius:
+                      //         3.0, // Adjust blur radius for shadow softness
+                      //     color: Colors.black, // Shadow color
+                      //   ),
+                      // ],
                       ),
-                    ],
-                  ),
                 ),
                 Text(
                   '${homeDiscount.dishType}',
-                  style: style14.copyWith(fontSize: 11),
+                  style: style14.copyWith(fontSize: 11, color: whiteColor),
                 ),
                 10.verticalSpace,
                 GestureDetector(

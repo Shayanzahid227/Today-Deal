@@ -1,7 +1,8 @@
 import 'package:code_structure/core/constants/strings.dart';
 
 class AppAssets {
-  String app_logo = "$staticAssets/app_logo.png";
+  String applogo = "$staticAssets/app_logo.png";
+  String redLogo = "$staticAssets/logo-red.png";
 //****************   home screen    **********************/
   String homeBackGround = "$dynamicAssets/homeBackGround..png";
   String pizza = "$dynamicAssets/pizza.png";
@@ -10,6 +11,7 @@ class AppAssets {
   String locationIcon = "$iconsAssets/locationIcon.png";
   String notificationIcon = "$iconsAssets/notificationIcon.png";
   String searchIcon = "$iconsAssets/searchIcon.png";
+  String iconfilter = "$iconsAssets/icon_filter.png";
 
   ///
   /// categories
@@ -34,4 +36,12 @@ class AppAssets {
   String pizzaHouse2 = "$dynamicAssets/pizzaHouse2.png";
 //*************************    restaurant details      ******************************** */
   String location2 = "$iconsAssets/location2.png";
+//******************************************************* */
+  String search = "$iconsAssets/search.png";
+  String email = "$iconsAssets/email.png";
+  String password = "$iconsAssets/password.png";
+  String username = "$iconsAssets/username.png";
+  String google = "$iconsAssets/google.png";
+  String line1 = "$iconsAssets/line1.png";
+  String line2 = "$iconsAssets/line2.png";
 }
