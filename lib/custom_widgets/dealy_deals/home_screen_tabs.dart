@@ -24,6 +24,7 @@ class CustomHomeTabsWidget extends StatelessWidget {
     return Container(
       height: 30.h,
       //width: 80.w,
+
       decoration: BoxDecoration(
         border: Border.all(
           color: isSelected ? primaryColor : Colors.transparent,
