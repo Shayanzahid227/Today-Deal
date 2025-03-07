@@ -1,0 +1,2 @@
+/Users/eapple/Today-Deal/android/app/.cxx/Debug/4r5d5t6i/armeabi-v7a/CMakeFiles/edit_cache.dir
+/Users/eapple/Today-Deal/android/app/.cxx/Debug/4r5d5t6i/armeabi-v7a/CMakeFiles/rebuild_cache.dir

@@ -2,7 +2,6 @@ import 'package:code_structure/core/constants/app_assest.dart';
 import 'package:code_structure/core/constants/auth_text_feild.dart';
 import 'package:code_structure/core/constants/colors.dart';
 import 'package:code_structure/core/constants/text_style.dart';
-import 'package:code_structure/core/model/home_top_rated.dart';
 import 'package:code_structure/custom_widgets/dealy_deals/home_categories.dart';
 import 'package:code_structure/custom_widgets/dealy_deals/home_discount.dart';
 import 'package:code_structure/custom_widgets/dealy_deals/home_famous_store.dart';
@@ -11,7 +10,6 @@ import 'package:code_structure/custom_widgets/dealy_deals/home_screen_tabs.dart'
 import 'package:code_structure/custom_widgets/dealy_deals/home_top_rated.dart';
 import 'package:code_structure/ui/screens/all_offers/category_page.dart';
 import 'package:code_structure/ui/screens/home/home_screen_view_model.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/route_manager.dart';
@@ -51,40 +49,64 @@ class _HomeScreenState extends State<HomeScreen> {
       create: (context) => HomeScreenViewModel(),
       child: Consumer<HomeScreenViewModel>(
         builder: (context, model, child) => Scaffold(
-          //backgroundColor: whiteColor,
-          backgroundColor: Colors.purple.shade200,
-          body: Padding(
-            padding: const EdgeInsets.only(left: 15.0),
-            child: SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  60.verticalSpace,
-                  //     search field
-                  _searchField(),
-                  //     location
-                  _location(),
-                  30.h.verticalSpace,
-                  //     first discount card
-                  _discount(model),
-                  30.h.verticalSpace,
-                  //     discount indicator
-                  _discountIndicator(model),
-                  30.h.verticalSpace,
-                  //     Categories
-                  _Categories(model),
-                  30.h.verticalSpace,
-                  //     top rated
-                  _topRated(model),
-                  30.verticalSpace,
-                  //     Near by store
-                  _nearbyStores(model),
-                  30.verticalSpace,
-                  //     Famous Store
-                  _famousStore(model),
-                  100.verticalSpace,
-                ],
-              ),
+          backgroundColor: whiteColor,
+          body: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Stack(
+                  alignment: Alignment.center,
+                  clipBehavior: Clip
+                      .none, // Yeh allow karega content ko Stack se bahir dikhane
+                  children: [
+                    _header(),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 30.0),
+                      child: Column(
+                        children: [
+                          _searchField(),
+                          _location(),
+                        ],
+                      ),
+                    ),
+
+                    // Yeh Discount Card ko aadha Stack ke andar aur aadha bahar dikhayega
+                    Positioned(
+                      bottom: -70, // Isko adjust karo jitna bahir chahiye
+                      left: -40,
+                      right: -40,
+                      child: _discount(model),
+                    ),
+                  ],
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(
+                    children: [
+                      80.verticalSpace, // Yeh niche space adjust karega
+
+                      _discountIndicator(model),
+                      30.h.verticalSpace,
+
+                      // Categories
+                      _Categories(model),
+                      30.h.verticalSpace,
+
+                      // Top Rated
+                      _topRated(model),
+                      30.verticalSpace,
+
+                      // Near by Store
+                      _nearbyStores(model),
+                      30.verticalSpace,
+
+                      // Famous Store
+                      _famousStore(model),
+                      100.verticalSpace,
+                    ],
+                  ),
+                )
+              ],
             ),
           ),
         ),
@@ -95,69 +117,47 @@ class _HomeScreenState extends State<HomeScreen> {
   ///
   ///  location
   ///
-  ListTile _location() {
-    return ListTile(
-      leading: Container(
-        height: 14.h,
-        width: 14.w,
-        decoration: BoxDecoration(),
-        child: Image.asset(
-          AppAssets().locationIcon,
-          fit: BoxFit.cover,
-        ),
-      ),
-      title: Row(
+  Widget _location() {
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Image.asset(
+            AppAssets().locationIcon,
+            scale: 4,
+          ),
+          4.horizontalSpace,
           Text(
             'sent to',
-            style: style14.copyWith(
-              fontSize: 12,
-            ),
+            style: style14.copyWith(fontSize: 12, color: whiteColor),
           ),
-          10.w.horizontalSpace,
+          4.horizontalSpace,
           Text(
-            'sir g location paki set ka ...',
+            'Pamulang Barat Residence No.5, RT 05/ ...',
             style: style14B.copyWith(
+              color: whiteColor,
               fontSize: 12,
             ),
           ),
           10.horizontalSpace,
-          Container(
-            height: 14.h,
-            width: 20.w,
-            decoration: BoxDecoration(),
-            child: Padding(
-              padding: EdgeInsets.all(2),
-              child: Image.asset(
-                AppAssets().downArrowIcon,
-                fit: BoxFit.cover,
-              ),
-            ),
+          Image.asset(
+            AppAssets().downArrowIcon,
+            scale: 4,
           ),
         ],
       ),
-      // trailing: Container(
-      //   height: 20.h,
-      //   width: 20.w,
-      //   decoration: BoxDecoration(),
-      //   child: Image.asset(
-      //     AppAssets().downArrowIcon,
-      //     fit: BoxFit.cover,
-      //   ),
-      // ),
     );
   }
 
   ///
   /// first discount card
   ///
-  SizedBox _discount(HomeScreenViewModel model) {
+  Widget _discount(HomeScreenViewModel model) {
     return SizedBox(
-      height: 180.h,
-      // width: double.infinity,
+      height: 200.h,
       child: PageView.builder(
-        padEnds: false,
-        dragStartBehavior: DragStartBehavior.start,
         controller: _pageController,
         itemCount: model.HomeDiscountList.length,
         itemBuilder: (context, index) {
@@ -203,7 +203,7 @@ class _HomeScreenState extends State<HomeScreen> {
   ///
   ///      search field
   ///
-  Padding _searchField() {
+  Widget _searchField() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20.0),
       child: Container(
@@ -218,18 +218,16 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Row(
           children: [
             Expanded(
-              child: Container(
-                height: 45.h,
-                child: TextFormField(
-                  decoration: authFieldDecoration.copyWith(
-                    hintText: 'Search fot Restaurant,Jewelry ...  ',
-                    hintStyle:
-                        style14N.copyWith(color: greyColor2, fontSize: 12.sp),
-                    fillColor: whiteColor,
-                    prefixIcon: Image.asset(
-                      AppAssets().searchIcon,
-                      scale: 3,
-                    ),
+              child: TextFormField(
+                decoration: authFieldDecoration.copyWith(
+                  hintText: 'Search fot Restaurant,Jewelry ....',
+                  hintStyle:
+                      style14N.copyWith(color: greyColor2, fontSize: 12.sp),
+                  fillColor: whiteColor,
+                  prefixIcon: Image.asset(
+                    AppAssets().searchIcon,
+                    color: hintTextColor,
+                    scale: 3,
                   ),
                 ),
               ),
@@ -370,12 +368,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 padding: EdgeInsets.only(right: 10),
                 child: GestureDetector(
                   onTap: () {
-                    onTap:
-                    () {
-                      setState(() {
-                        selectedTabIndex = index; // Update selected tab
-                      });
-                    };
+                    setState(() {
+                      selectedTabIndex = index; // Update selected tab
+                    });
                   },
                   child: CustomHomeTabsWidget(
                     homeTopRatedTabs: model.topRatedTabsList[index],
@@ -394,11 +389,8 @@ class _HomeScreenState extends State<HomeScreen> {
             scrollDirection: Axis.horizontal,
             itemCount: model.topRatedList.length,
             itemBuilder: (BuildContext context, int index) {
-              return Padding(
-                padding: EdgeInsets.only(right: 10),
-                child: CustomHomeTopRatedWidget(
-                  HomeTopRated: model.topRatedList[index],
-                ),
+              return CustomHomeTopRatedWidget(
+                HomeTopRated: model.topRatedList[index],
               );
             },
           ),
@@ -493,11 +485,8 @@ class _HomeScreenState extends State<HomeScreen> {
             scrollDirection: Axis.horizontal,
             itemCount: model.nearByStoreList.length,
             itemBuilder: (BuildContext context, int index) {
-              return Padding(
-                padding: EdgeInsets.only(right: 10),
-                child: CustomHomeNearByStoreWidget(
-                  HomeTopRated: model.nearByStoreList[index],
-                ),
+              return CustomHomeNearByStoreWidget(
+                HomeTopRated: model.nearByStoreList[index],
               );
             },
           ),
@@ -592,11 +581,8 @@ class _HomeScreenState extends State<HomeScreen> {
             scrollDirection: Axis.horizontal,
             itemCount: model.famousStoreList.length,
             itemBuilder: (BuildContext context, int index) {
-              return Padding(
-                padding: EdgeInsets.only(right: 10),
-                child: CustomHomeFamousStoreWidget(
-                  HomeTopRated: model.famousStoreList[index],
-                ),
+              return CustomHomeFamousStoreWidget(
+                HomeTopRated: model.famousStoreList[index],
               );
             },
           ),
@@ -604,4 +590,23 @@ class _HomeScreenState extends State<HomeScreen> {
       ],
     );
   }
+}
+
+_header() {
+  return Container(
+    height: 350,
+    padding: EdgeInsets.all(40),
+    alignment: Alignment.topCenter,
+    decoration: BoxDecoration(
+      color: Colors.red,
+      borderRadius: BorderRadius.only(
+        bottomLeft: Radius.elliptical(400, 100),
+        bottomRight: Radius.elliptical(400, 100),
+      ),
+    ),
+    child: Image.asset(
+      AppAssets().applogo,
+      scale: 8,
+    ),
+  );
 }
