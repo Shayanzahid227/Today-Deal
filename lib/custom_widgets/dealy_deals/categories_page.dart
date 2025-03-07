@@ -16,7 +16,7 @@ class CustomCategoriesPageWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 200.h,
+      margin: EdgeInsets.all(10),
       //width: 310.w,
       width: double.infinity,
       decoration: BoxDecoration(

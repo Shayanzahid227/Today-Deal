@@ -15,7 +15,7 @@ class CustomHomeTopRatedWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 190.h,
+      margin: EdgeInsets.all(5),
       width: 175.w,
       decoration: BoxDecoration(
         color: whiteColor,
@@ -24,7 +24,7 @@ class CustomHomeTopRatedWidget extends StatelessWidget {
             color: Colors.grey.withOpacity(0.5), // Shadow color
             spreadRadius: 2, // Spread radius
             blurRadius: 4, // Blur radius
-            offset: Offset(5, 5), // Offset in x and y direction
+            offset: Offset(0, 1), // Offset in x and y direction
           ),
         ],
         //  border: Border.all(color: blackColor),

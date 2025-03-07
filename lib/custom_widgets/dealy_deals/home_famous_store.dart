@@ -15,7 +15,7 @@ class CustomHomeFamousStoreWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 190.h,
+      margin: EdgeInsets.all(5),
       width: 175.w,
       decoration: BoxDecoration(
         color: whiteColor,
